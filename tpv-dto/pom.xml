@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.tesis</groupId>
+        <artifactId>tpv</artifactId>
+        <version>1.0</version>
+    </parent>
+    <artifactId>tpv-dto</artifactId>
+    <packaging>jar</packaging>
+    <name>tpv-dto</name>
+    <properties>
+        <maven.compiler.source>${maven.compiler.source.version}</maven.compiler.source>
+        <maven.compiler.target>${maven.compiler.target.version}</maven.compiler.target>
+    </properties>
+</project>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.tesis</groupId>
+    <artifactId>tpv</artifactId>
+    <version>1.0</version>
+  </parent>
+  <artifactId>tpv-ejb-remote</artifactId>
+  <name>tpv-ejb-remote</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+    <dependency>
+       <groupId>com.tesis</groupId>
+       <artifactId>tpv-dto</artifactId>
+       <version>${project.version}</version>        	
+   </dependency>
+   <dependency><!-- Esta dependencia fue tomada del pom de tpv-ejb -->
+       <groupId>javax</groupId>
+       <artifactId>javaee-api</artifactId>
+       <version>${project.javax.version}</version>
+       <scope>provided</scope>
+   </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${project.Junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>

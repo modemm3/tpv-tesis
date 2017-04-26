@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Datos</title>
+	<script src="app/bower_components/angular/angular.js"></script>
+  	<script src="app/bower_components/angular-route/angular-route.js"></script>
+  	<script src="app/components/version/version.js"></script>
+  	<sc
+  	<script src="app/components/version/interpolate-filter.js"></script>
+  	<script src="app/bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script> 
+</head>
+<body ng-app="datosApp">
+<div ng-controller="controladorDatos">
+	<h1>A-Team</h1>
+	<p>{{equipo.historia}}</p>
+	<ul>
+		<li ng-repeat="integrante in equipo.integrantes">{{integrante.rango}}{{integrante.nombre}}({{integrante.especialidad}})</li>
+	</ul>
+</div>
+<script>
+	var misDatos=angular.module('datosApp', []);
+
+	misDatos.controller('controladorDatos', function($scope, $http){
+		$scope.inicializar=function(){
+			$http.get('datos.json').
+			success(function(datos){
+				$scope.equipo=datos;
+			});
+		}
+		$scope.inicializar();
+	});
+</script>
+</body>
+</html>
