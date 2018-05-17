@@ -54,21 +54,21 @@ angular
         }
     }
 
-	$scope.show= function editItem() {
+	$scope.show= function editItem(row) {
 		console.log('entra');
-        ModalService.showModal({
-            templateUrl: 'modal.html',
-            controller: 'DepartmentCtrl'
-        }).then(function(modal) {
-			console.log('muestras'+ modal.element);
-           modal.element.modal();
-            modal.close.then(function(result) {
-                $scope.message = "You said " + result;
-            });
-        }).catch(function(error) {
-  // error contains a detailed error message.
-  console.log('Errorsote=> '+ error);
-});
+        	$modal.open({
+			templateUrl : 'department-edit.html',
+			controller : [ '$http', '$modalInstance', 'grid', 'row', DepartmentEditCtrl ],
+			controllerAs : 'vm',
+			resolve : {
+				grid : function() {
+					return grid;
+				},
+				row : function() {
+					return row;
+				}
+			}
+		});
 	}
 	
 		/*$scope.tipoAccionEnum=TipoAccionEnum;
@@ -241,8 +241,3 @@ angular
 	   $scope.clean($scope.departmentForm);*/
 }])
 
-.controller('ModalController', function($scope, close) {
-
-  // when you need to close the modal, call close
-  close("Success!");
-});
